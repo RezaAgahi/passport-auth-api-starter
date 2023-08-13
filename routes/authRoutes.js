@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const { register, login, logout } = require("../controllers/authControllers");
 const passport = require("passport");
-const { forwardAuthenticated } = require("../middleware/isAuthenticated");
 
 router.route("/register").post(register);
 router.route("/login").post(passport.authenticate("local", { failureRedirect: "/login-failure" }), login);

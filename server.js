@@ -23,8 +23,8 @@ app.use(
     session({
         name: "_a9xrlsdf",
         secret: process.env.SESSION_SECRET,
-        resave: true,
-        saveUninitialized: true,
+        resave: false,
+        saveUninitialized: false,
         store: MongoStore.create({ mongoUrl: process.env.mongoURI }),
         cookie: {
             maxAge: 1000 * 60 * 60 * 24 * 3,
@@ -50,7 +50,7 @@ app.get("/login-success", (req, res) => {
 });
 
 app.get("/login-failure", (req, res) => {
-    res.send("Failed");
+    res.status(401).send("Invalid Credentials");
 });
 
 app.use("/", authRoutes);

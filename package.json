@@ -1,12 +1,17 @@
 {
-    "name": "api",
+    "name": "passport-auth-api-starter",
     "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "description": "A simple starter api auth with passport",
+    "main": "server.js",
     "scripts": {
-        "dev": "nodemon server.js --config config/nodemon.json"
+        "dev": "nodemon server.js --config config/nodemon.json",
+        "start": "node server.js"
     },
-    "keywords": [],
+    "keywords": [
+        "passport",
+        "express",
+        "mongodb"
+    ],
     "author": "Reza Ak",
     "license": "MIT",
     "devDependencies": {
