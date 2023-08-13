@@ -9,6 +9,7 @@ const passport = require("passport");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const { ensureAuthenticated } = require("./middleware/isAuthenticated");
+const User = require("./models/User");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -42,7 +43,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/dashboard", ensureAuthenticated, (req, res) => {
-    res.send("Dashboard");
+    const { name } = req.user;
+
+    res.send(`Dashboard - Welcome ${name}`);
 });
 
 app.get("/login-success", (req, res) => {
@@ -60,10 +63,3 @@ app.use(errorHandler);
 app.listen(PORT, () => {
     console.log(`Server started on port:${PORT}`.bgBlue);
 });
-
-// Handle unhandled promise rejections
-// process.on("unhandledRejection", (err, promise) => {
-//     console.log(`Error: ${err.message}`.red);
-//     // Close server & exit process
-//     // server.close(() => process.exit(1));
-// });
