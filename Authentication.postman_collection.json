@@ -1,0 +1,101 @@
+{
+    "info": {
+        "name": "auth-api",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Register",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n     \"name\":\"reza\",\r\n     \"email\":\"reza@a.com\",\r\n     \"password\":\"reza1234@\"\r\n\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{BASE_URL}}/register",
+                    "host": ["{{BASE_URL}}"],
+                    "path": ["register"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Login",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"email\":\"reza@a.com\",\r\n    \"password\":\"reza1234@\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{BASE_URL}}/login",
+                    "host": ["{{BASE_URL}}"],
+                    "path": ["login"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Logout",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                    "raw": "{{BASE_URL}}/logout",
+                    "host": ["{{BASE_URL}}"],
+                    "path": ["logout"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Dashboard",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{BASE_URL}}/dashboard",
+                    "host": ["{{BASE_URL}}"],
+                    "path": ["dashboard"]
+                }
+            },
+            "response": []
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [""]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [""]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "BASE_URL",
+            "value": "http://localhost:3000",
+            "type": "default"
+        }
+    ]
+}
