@@ -51,10 +51,13 @@ variables:
 ---
 
 Install dependencies
+
 `npm install`
 
 run the dev server
+
 `npm run dev`
 
 for production
+
 `npm start`
