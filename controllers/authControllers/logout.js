@@ -1,3 +1,8 @@
-module.exports = (req, res) => {
-    res.send("Logout");
+module.exports = (req, res, next) => {
+    req.logout(function (err) {
+        if (err) {
+            return next(err);
+        }
+        res.redirect("/");
+    });
 };
